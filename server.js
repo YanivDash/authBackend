@@ -8,6 +8,8 @@ import { db } from "./database.js";
 import dotenv from "dotenv";
 dotenv.config();
 
+const port = process.env.PORT || 4000;
+
 const salt = 10;
 
 /* to create an instance of an Express application */
@@ -107,6 +109,6 @@ app.get("/logout", (req, res) => {
   return res.json({ Status: "success" });
 });
 
-app.listen(4000, () => {
-  console.log("listening on port 4000");
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
 });
